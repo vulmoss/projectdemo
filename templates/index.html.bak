@@ -20,16 +20,16 @@
   <div class="row">
 
   <div class="col-xs-8 col-md-2">  
-{% for b in blocks %}
  <div class="panel panel-default">
 <div class="panel-heading">
+<h3 class="panel-title">运维专区</h3>
 
-<a href="artive" style="font-size: 16px;">{{ b.name}}</a>
-<span class="pull-right"> {{ b.manager }}</span>
+<span class="pull-right"><a href="artive">文章  </a></span>
 </div>
 
 <div class="panel-body">
- {{ b.desc }}
+<p>DevOps
+</p>
 </div>   
  
   <button type="button" calss="btn btn-success"> commit </button>                </div>
