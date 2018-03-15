@@ -8,7 +8,7 @@
 <body>
 <div class="container">
   <div class="row">
-  <div class="col-xs-12 col-md-9">
+  <div class="col-md-9">
    <div class="jumbot">
      <center>  <h2>python部落</h2> </center>
       </div>
@@ -19,7 +19,7 @@
 
   <div class="row">
 
-  <div class="col-xs-8 col-md-2">  
+  <div class="col-md-2">  
 {% for b in blocks %}
  <div class="panel panel-default">
 <div class="panel-heading">
@@ -29,12 +29,13 @@
 </div>
 
 <div class="panel-body">
- {{ b.desc }}
+{{ b.desc }}
 </div>   
- 
+</div>   
+{% endfor %} 
   <button type="button" calss="btn btn-success"> commit </button>                </div>
-  <div class="col-xs-8 col-md-6">django</div>
-  <div class="col-xs-12 col-md-2">Buluo buidling </div>
+  <div class="col-md-6">django</div>
+  <div class="col-md-2">Buluo buidling </div>
 
 </div>
 </div>

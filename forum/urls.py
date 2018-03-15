@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     url(r'^artive$', views.artive),
-    url(r'^static/(?P<path>,*)$',django.contrib.staticfiles.views.serve),
+###    url(r'^static/(?P<path>,*)$',django.contrib.staticfiles.views.serve),
 ]
