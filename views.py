@@ -3,7 +3,7 @@ from block.models import Block
 #from django.db import models
 #from django.http import HttpResponse
 
-LANGUAGE_CODE='zh-hans'
+#LANGUAGE_CODE='zh-hans'
 
 def index(request):
     block_infos = Block.objects.all().order_by("-id")
