@@ -1,0 +1,30 @@
+<html>
+<body>
+</div>
+  </div>
+   </div>
+
+
+  <div class="row">
+{% block content %}
+  <div class="col-md-2">  
+{% for b in blocks %}
+ <div class="panel panel-default">
+<div class="panel-heading">
+
+<a href="/article/list/{{ b.id}}"</a>
+<span class="pull-right"> {{ b.manager }}</span>
+</div>
+
+<div class="panel-body">
+{{ b.desc }}
+</div>   
+</div>   
+{% endfor %} 
+
+{% endblock %}
+</div>
+</div>
+</div>
+</body>
+</html>
