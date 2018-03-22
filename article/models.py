@@ -1,5 +1,6 @@
 from django.db import models
 from block.models import Block
+from django import forms
 class Article(models.Model):
     block = models.ForeignKey(Block,verbose_name="版块ID")
     title = models.CharField("版块名词",max_length=100)
@@ -13,3 +14,12 @@ class Article(models.Model):
     class Meta:
         verbose_name = "文章"
         verbose_name_plural = "文章"
+
+
+"""
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model=Article
+        fields = ["title","content"]
+
+"""

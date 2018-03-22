@@ -21,3 +21,14 @@ def article_list(request,block_id):
     block_id = int(block_id)
     return render(request,"article_list.html")
                                                       
+
+
+#form = ArticleForm(request.POST)
+
+#if form.is_valid():
+#    article = Article(block=block, title=form.cleaned_data[:"title"],content = form.cleaned_data["content"],status=0)
+#    article.save()
+#    return redirect("/article/list/%s" % block_id)
+#else:
+#    return render(request,"article_create.html",{"b":block,"form":form})
+
