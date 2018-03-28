@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from block.models import Block
 from django import forms
+from django.views.generic import View, DetailView
 #from django.db import models
 #from django.http import HttpResponse
 
@@ -26,13 +27,27 @@ def article_list(request,block_id):
 
                                                       
 
+class ArticleCreateView(View):
 
-if form.is_valid():
-    article = form.save(commit=False)
-    article.block= block
-    article.status=0
-    article.save()
-    return redirect("/article/list/%s" % block_id)
-else:
-    return render(request,"article_create.html",{"b":block,"form":form})
+    template_name = "article_create.html"
+
+    def init_data(self, block_id):
+        self.block_id = block_id
+        self.block = Block.objects.get(id=block_id)
+
+    def get(self, request, block_id):
+        self.init_data(block_id)
+        return render(request, self.template_name, {"b": self.block})
+
+    def post(self, request, block_id):
+        self.init_data(block_id)
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.block= block
+            article.status=0
+            article.save()
+            return redirect("/article/list/%s" %block_id)
+        else:
+            return render(request,"article_create.html",{"b":block,"form":form})
 
